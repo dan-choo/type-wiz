@@ -29,7 +29,8 @@ clean:
 
 
 $(EXECUTABLE_FILES): $(OBJECT_FILES)
-	$(CC) $(LDFLAGS) -o $@ $^
+	mkdir -p $(BIN)
+	$(CC) $(LDFLAGS) -lncurses -o $@ $^
 	@# ^^^ http://www.gnu.org/software/make/manual/make.html#Automatic-Variables
 	@echo "Build successful!"
 
